@@ -1,0 +1,22 @@
+@use "../2_utils/mixins" as *;
+@use "../2_utils/functions" as *;
+@use "../6_queries/queries" as *;
+@use "../1_base/colors" as *;
+
+.board-container {
+  //   background-color: blue;
+  height: 28em;
+}
+
+.player-container {
+  @include flex(row, center, center);
+
+  .computer-name {
+    margin-left: 0.2em;
+    font-weight: weight(bold);
+  }
+}
+.board {
+  //   background-color: purple;
+  height: 18em;
+}

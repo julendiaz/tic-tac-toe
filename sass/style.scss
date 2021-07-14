@@ -1,3 +1,25 @@
-body {
-  background-color: blue;
-}
+// 1_base
+@use "./1_base/colors.scss";
+@use "./1_base/typography.scss";
+@use "./1_base/reset.scss";
+@use "./1_base/global.scss";
+
+// 2_utils
+@use "./2_utils/mixins";
+@use "./2_utils/functions";
+
+// 3_layout
+@use "./3_layout/main-container";
+@use "./3_layout/header";
+@use "./3_layout/footer";
+@use "./3_layout/modal";
+
+// 4_modules
+@use "./4_modules/button";
+@use "./4_modules/board";
+@use "./4_modules/moves";
+
+// 5_states
+
+// 6_queries
+@use "./6_queries/queries";

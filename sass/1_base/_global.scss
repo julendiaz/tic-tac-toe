@@ -1,0 +1,29 @@
+@use "../1_base/typography" as *;
+@use "../1_base/colors" as *;
+@use "../2_utils/mixins" as *;
+@use "../6_queries/queries" as *;
+
+:root {
+  font-family: $font_family;
+  font-size: $font_size_base;
+  color: $black_700;
+  font-weight: weight(light);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $black_700;
+  background-color: $black_900;
+  min-width: 100%;
+  min-height: 100vh;
+  padding: 2em;
+  @include flex(0, center, center);
+}
+
+button {
+  cursor: pointer;
+  font-family: $font_family;
+}

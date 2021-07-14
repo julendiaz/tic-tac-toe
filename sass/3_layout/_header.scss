@@ -1,0 +1,9 @@
+@use "../2_utils/mixins" as *;
+@use "../6_queries/queries" as *;
+@use "../1_base/colors" as *;
+
+header {
+  @include flex(column, center, center);
+  height: 10em;
+  //   background-color: pink;
+}

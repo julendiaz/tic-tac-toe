@@ -1,0 +1,10 @@
+@use "../1_base/colors" as *;
+@use "../1_base/typography" as *;
+@use "../2_utils/functions" as *;
+
+button {
+  background-color: $black_900;
+  color: $yellow_400;
+  font-weight: weight(bold);
+  padding: 0.5em;
+}
