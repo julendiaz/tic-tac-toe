@@ -25,12 +25,12 @@ Well in this project I am going to recreate the classic Tic Tac Toe Game. This i
 
 ## The Challenge
 
-- [x] Build a basic web-browser tic-tac-toe game
-- [x] Put in practice Factory Functions
-- [x] Use as little code as possible
-- [x] Allow players to make a move on the Gameboard
-- [x] Build the logic for when the game is over
-- [x] Create a display for entering player's names
+- [ ] Build a basic web-browser tic-tac-toe game
+- [ ] Put in practice Factory Functions
+- [ ] Use as little code as possible
+- [ ] Allow players to make a move on the Gameboard
+- [ ] Build the logic for when the game is over
+- [ ] Create a display for entering player's names
 - [ ] Create a simple AI to make the game much harder
 
 ## Key Features
