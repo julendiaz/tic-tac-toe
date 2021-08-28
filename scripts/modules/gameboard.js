@@ -21,6 +21,7 @@ const Gameboard = (() => {
               break;
           }
         } 
+        
       } 
 
     const switchPlayer = () => { 
@@ -35,30 +36,35 @@ const Gameboard = (() => {
     
     const hoverTokens = () => { 
             tokens.forEach((token) => { 
-                if (!token.classList.contains("token--playerOne") || !token.classList.contains("token--playerTwo") ) { 
                     token.addEventListener("mouseenter", function () { 
-                        if (players[0].classList.contains("current-player") ) { 
-                            token.classList.add("token--hoverOne") 
-                        } else { 
-                            // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
-                            token.classList.add("token--hoverTwo"); 
-                        } 
+                        if (!token.classList.contains("token--playerOne") && !token.classList.contains("token--playerTwo")) {
+                            if (players[0].classList.contains("current-player") ) { 
+                                token.classList.add("token--hoverOne") 
+                            } else { 
+                                // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
+                                token.classList.add("token--hoverTwo"); 
+                            } 
+                        }
                     })
                     token.addEventListener("mouseleave", function () { 
-                        if (players[0].classList.contains("current-player")) { 
-                            token.classList.remove("token--hoverOne"); 
-                            token.classList.remove("token--hoverTwo");
-                        } else { 
-                            // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
-                            token.classList.remove("token--hoverOne");
-                            token.classList.remove("token--hoverTwo"); 
-                        } 
-                    }) 
-                }          
+                        if (!token.classList.contains("token--playerOne") && !token.classList.contains("token--playerTwo")) {
+                            if (players[0].classList.contains("current-player")) { 
+                                Gameboard.removeHovers(token);
+                            } else { 
+                                // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
+                                Gameboard.removeHovers(token);
+                            } 
+                        }
+                    })           
             }) 
     } 
+
+    const removeHovers = (token) => {
+        token.classList.remove("token--hoverOne"); 
+        token.classList.remove("token--hoverTwo");
+    }
   
-    return { renderToken, switchPlayer, hoverTokens };
+    return { renderToken, switchPlayer, hoverTokens, removeHovers };
   })();
   
   export { Gameboard };
