@@ -63,8 +63,14 @@ const Gameboard = (() => {
         token.classList.remove("token--hoverOne"); 
         token.classList.remove("token--hoverTwo");
     }
+
+    const disableTokens = () => {
+        tokens.forEach((token) => {
+            token.style.pointerEvents = "none";
+        })
+    }
   
-    return { renderToken, switchPlayer, hoverTokens, removeHovers };
+    return { renderToken, switchPlayer, hoverTokens, removeHovers, disableTokens };
   })();
   
   export { Gameboard };

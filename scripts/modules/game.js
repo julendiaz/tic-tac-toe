@@ -33,8 +33,11 @@ const Game = (() => {
                 playerTwo.addToken(position, playerTwo.getName());
                 currentPlayer = "playerOne";
             }
-        };
+        } else {
+            Gameboard.disableTokens();      
+        }
         Game.checkGameOver();
+        
     }
 
     const checkGameOver = () => {
@@ -47,6 +50,7 @@ const Game = (() => {
         console.log(tokenCount);
         if(tokenCount >= 6) {
             playing = false; 
+            Gameboard.disableTokens();
         } else {
             playing = true;
             tokenCount = 0;
