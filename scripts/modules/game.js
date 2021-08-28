@@ -2,7 +2,7 @@ import { Gameboard } from "./gameboard.js";
 import { Player } from "./player.js";
 
 const Game = (() => {
-    const placeholders = [...document.querySelectorAll(".placeholder")]; 
+    const token = [...document.querySelectorAll(".token")]; 
     let currentPlayer = "playerOne";
     let playing = true; 
     // Starter Values
@@ -12,11 +12,14 @@ const Game = (() => {
 
     // Listen to the Gameboard
     const listenGameboard = () => {
-        placeholders.forEach((placeholder) => {
-            placeholder.addEventListener("click", function () {
-                let currentPosition = placeholder.dataset.token;
+        token.forEach((tok) => {
+            tok.addEventListener("click", function () {
+                let currentPosition = tok.dataset.token;
                 Game.playTurn(currentPosition);
                 Gameboard.switchPlayer();
+                // Remove hovers
+                tok.classList.remove("token--hoverOne"); 
+                tok.classList.remove("token--hoverTwo");
             })               
         })
     }

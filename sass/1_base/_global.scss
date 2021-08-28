@@ -16,10 +16,9 @@ html {
 
 body {
   color: $black_700;
-  background-color: $black_900;
+  background-color: white;
   min-width: 100%;
   min-height: 100vh;
-  padding: 2em;
   @include flex(0, center, center);
 }
 

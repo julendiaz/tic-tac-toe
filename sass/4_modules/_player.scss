@@ -1,0 +1,11 @@
+@use "../2_utils/mixins" as *;
+@use "../2_utils/functions" as *;
+@use "../6_queries/queries" as *;
+@use "../1_base/colors" as *;
+
+.player {
+    font-weight: 300;
+}
+.current-player {
+    font-weight: 800;
+}

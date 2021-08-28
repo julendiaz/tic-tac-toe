@@ -28,10 +28,9 @@ html {
 
 body {
   color: #464647;
-  background-color: #32353b;
+  background-color: white;
   min-width: 100%;
   min-height: 100vh;
-  padding: 2em;
   display: flex;
   flex-direction: 0;
   align-items: center;
@@ -48,7 +47,6 @@ button {
   flex-direction: column;
   align-items: 0;
   justify-content: 0;
-  background-color: #faf25d;
   width: 100vw;
   height: 100vh;
 }
@@ -68,21 +66,84 @@ button {
   padding: 0.5em;
 }
 
+.player {
+  font-weight: 300;
+}
+
+.current-player {
+  font-weight: 800;
+}
+
 .board-container {
   height: 28em;
 }
 
-.player-container {
+.board {
+  margin: 0 auto;
+  width: 22em;
+  height: 22em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.placeholder {
   display: flex;
-  flex-direction: row;
+  flex-direction: 0;
   align-items: center;
   justify-content: center;
 }
-.player-container .computer-name {
-  margin-left: 0.2em;
-  font-weight: 800;
-}
 
-.board {
-  height: 18em;
+.token {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.token--playerOne {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #33363C;
+  border-radius: 50%;
+  width: 85%;
+  height: 85%;
+}
+.token--playerTwo {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/assets/cross.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 83%;
+  height: 83%;
+}
+.token--hoverOne {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0.2em solid #33363C;
+  border-radius: 50%;
+  width: 85%;
+  height: 85%;
+}
+.token--hoverTwo {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/assets/hovercross.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 83%;
+  height: 83%;
 }/*# sourceMappingURL=style.css.map */

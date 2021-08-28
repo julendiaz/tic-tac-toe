@@ -4,7 +4,6 @@
 
 .main-container {
   @include flex(column, 0, 0);
-  background-color: $yellow_400;
   width: 100vw;
   height: 100vh;
 }

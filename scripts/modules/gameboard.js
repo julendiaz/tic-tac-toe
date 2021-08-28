@@ -4,9 +4,24 @@ import { Game } from "./game.js";
 
 const Gameboard = (() => { 
     const gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8]; 
-    const placeholders = [...document.querySelectorAll(".placeholder")]; 
+    const tokens = [...document.querySelectorAll(".token")]; 
     const players = [...document.querySelectorAll(".player")]; 
  
+    const renderToken = (position, player) => {
+        // Seleccionar placeholder con position
+        const currentToken = document.querySelector(`[data-token="${position}"]`);
+    
+        if (!currentToken.classList.contains("token--playerOne") || !currentToken.classList.contains("token--playerTwo") ) {
+          switch(player) {
+            case "playerOne": 
+              currentToken.classList.add("token--playerOne");
+              break;
+            case "playerTwo":
+              currentToken.classList.add("token--playerTwo");
+              break;
+          }
+        } 
+      } 
 
     const switchPlayer = () => { 
         if (players[0].classList.contains("current-player")) { 
@@ -17,27 +32,33 @@ const Gameboard = (() => {
             players[1].classList.remove("current-player");
         } 
     }
-    const renderToken = (position, player) => {
-        // Seleccionar placeholder con position
-        const currentHolder = document.querySelector(`[data-token="${position}"]`);
-        const newToken = document.createElement("div");
-        newToken.classList.add("token");
     
-        if (currentHolder.children.length < 1) {
-          switch(player) {
-            case "playerOne": 
-              newToken.classList.add("token--playerOne");
-              currentHolder.append(newToken);
-              break;
-            case "playerTwo":
-              newToken.classList.add("token--playerTwo");
-              currentHolder.append(newToken);
-              break;
-          }
-        } 
-      } 
+    const hoverTokens = () => { 
+            tokens.forEach((token) => { 
+                if (!token.classList.contains("token--playerOne") || !token.classList.contains("token--playerTwo") ) { 
+                    token.addEventListener("mouseenter", function () { 
+                        if (players[0].classList.contains("current-player") ) { 
+                            token.classList.add("token--hoverOne") 
+                        } else { 
+                            // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
+                            token.classList.add("token--hoverTwo"); 
+                        } 
+                    })
+                    token.addEventListener("mouseleave", function () { 
+                        if (players[0].classList.contains("current-player")) { 
+                            token.classList.remove("token--hoverOne"); 
+                            token.classList.remove("token--hoverTwo");
+                        } else { 
+                            // placeholder.style.backgroundImage = "url(/assets/hovercross.svg)"; 
+                            token.classList.remove("token--hoverOne");
+                            token.classList.remove("token--hoverTwo"); 
+                        } 
+                    }) 
+                }          
+            }) 
+    } 
   
-    return { renderToken, switchPlayer };
+    return { renderToken, switchPlayer, hoverTokens };
   })();
   
   export { Gameboard };

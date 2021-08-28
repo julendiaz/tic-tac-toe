@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
     <div class="main-container">
       <header>
         <h3 class="main-title">tic <span>tac</span> toe</h3>
-        <h6 class="japanese">チックタックトー</h6>
+        <div class="player-container">
+          <h5 class="player current-player">player one</h5>
+          <h5 class="player">player two</h5>
+        </div>
+        
       </header>
       <div class="board-container">
-        <div class="player-container">
-          <p class="player-name">player</p>
-          <p class="computer-name">computer</p>
+        <div class="board">
+          <div class="token" data-token="0"></div>
+          <div class="token" data-token="1"></div>
+          <div class="token" data-token="2"></div>
+          <div class="token" data-token="3"></div>
+          <div class="token" data-token="4"></div>
+          <div class="token" data-token="5"></div>
+          <div class="token" data-token="6"></div>
+          <div class="token" data-token="7"></div>
+          <div class="token" data-token="8"></div>
         </div>
-        <div class="board"></div>
         <button class="restart">restart</button>
-      </div>
-      <div class="level-container">
-        <h5 class="levels-title">Levels</h5>
-        <div class="levels">
-          <p class="easy">easy</p>
-          <p class="medium">medium</p>
-          <p class="hard">hard</p>
-        </div>
       </div>
     </div>
   </body>

@@ -3,3 +3,4 @@ import { Game } from "./modules/game.js";
 import { Player }  from "./modules/player.js";
 
 Game.listenGameboard();
+Gameboard.hoverTokens();

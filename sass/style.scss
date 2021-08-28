@@ -16,8 +16,10 @@
 
 // 4_modules
 @use "./4_modules/button";
+@use "./4_modules/player";
 @use "./4_modules/board";
 @use "./4_modules/moves";
+@use "./4_modules/token";
 
 // 5_states
 
