@@ -23,3 +23,15 @@
 .placeholder {
   @include flex(0, center, center);
 }
+
+.final-container {
+  @include flex(0, center, center);
+  flex-direction: column;
+}
+
+.winner-message {
+  @include flex(0, center, center);
+  margin: 2em auto;
+  font-size: 1.3em;
+  width: 100%;
+}

@@ -60,10 +60,14 @@ header {
 }
 
 button {
-  background-color: #32353b;
-  color: #faf25d;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.705);
+  color: white;
   font-weight: 800;
   padding: 0.5em;
+}
+button:hover {
+  background-color: black;
 }
 
 .player {
@@ -94,6 +98,24 @@ button {
   flex-direction: 0;
   align-items: center;
   justify-content: center;
+}
+
+.final-container {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.winner-message {
+  display: flex;
+  flex-direction: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 2em auto;
+  font-size: 1.3em;
+  width: 100%;
 }
 
 .token {

@@ -3,8 +3,14 @@
 @use "../2_utils/functions" as *;
 
 button {
-  background-color: $black_900;
-  color: $yellow_400;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.705);
+  color: white;
   font-weight: weight(bold);
   padding: 0.5em;
+
+  &:hover {
+    background-color: black;
+  }
 }
+

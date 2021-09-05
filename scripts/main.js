@@ -4,3 +4,4 @@ import { Player }  from "./modules/player.js";
 
 Game.listenGameboard();
 Gameboard.hoverTokens();
+Gameboard.restartGame();
