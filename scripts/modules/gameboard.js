@@ -6,7 +6,7 @@ const Gameboard = (() => {
     const gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8]; 
     const tokens = [...document.querySelectorAll(".token")]; 
     const players = [...document.querySelectorAll(".player")]; 
-    const restartBtn = document.querySelector(".restart");
+   
  
     const renderToken = (position, player) => {
         // Seleccionar placeholder con position
@@ -84,22 +84,9 @@ const Gameboard = (() => {
         }
     }
 
-    const restartGame = () => {
-        restartBtn.addEventListener("click", function () {
-            Game.currentPlayer = "playerOne";
-            players[1].classList.remove("current-player");
-            players[0].classList.remove("current-player");
-            players[0].classList.add("current-player");
-            Game.playing = true; 
-            Game.tokenCount = 0; 
-            Game.playerOneTokens = [];
-            Game.playerTwoTokens = [];
-            Gameboard.cleanBoard();
-            Gameboard.enableTokens();
-        })
-    }
+   
   
-    return { renderToken, switchPlayer, hoverTokens, removeHovers, disableTokens, restartGame, cleanBoard, enableTokens };
+    return { renderToken, switchPlayer, hoverTokens, removeHovers, disableTokens, cleanBoard, enableTokens };
   })();
   
   export { Gameboard };

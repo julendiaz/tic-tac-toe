@@ -4,6 +4,7 @@ import { Player } from "./player.js";
 const Game = (() => {
     const tokens = [...document.querySelectorAll(".token")]; 
     const winnerMessage = document.querySelector(".winner-message");
+
     let currentPlayer = "playerOne";
     let playing = true; 
     let tokenCount = 0; 
