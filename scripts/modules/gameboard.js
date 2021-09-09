@@ -16,9 +16,11 @@ const Gameboard = (() => {
           switch(player) {
             case "playerOne": 
               currentToken.classList.add("token--playerOne");
+              currentToken.style.pointerEvents = "none";
               break;
             case "playerTwo":
               currentToken.classList.add("token--playerTwo");
+              currentToken.style.pointerEvents = "none";
               break;
           }
         } 

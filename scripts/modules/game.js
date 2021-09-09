@@ -51,8 +51,6 @@ const Game = (() => {
             Gameboard.disableTokens();      
         }
         
-        Game.checkTie();
-        
     }
 
     const checkTie = () => {
@@ -62,8 +60,7 @@ const Game = (() => {
                 tokenCount++;
             }
         }
-        console.log(tokenCount);
-        Game.checkWinner();
+
         if(tokenCount >= 9) {
             playing = false; 
             Gameboard.disableTokens();
@@ -93,7 +90,10 @@ const Game = (() => {
             Gameboard.disableTokens();
             winnerMessage.textContent = "Player 2 Wins! 🌊";
             // return "playerTwo wins"
-        } 
+        } else {
+            Game.checkTie();
+        }
+        
 
         playerOneTokens = [];
         playerTwoTokens = [];
