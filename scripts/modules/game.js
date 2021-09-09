@@ -11,8 +11,8 @@ const Game = (() => {
     let playerOneTokens = [];
     let playerTwoTokens = [];
     // Starter Values
-    const horizontalWins = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]; 
-    const verticalWins = [[0, 3, 6], [1, 4, 7], [2, 5, 8]];
+    const horizontalWins = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];  
+    const verticalWins = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]; 
     const diagonalWin = [[0, 4, 8], [2, 4, 6]]; 
 
     const playerOne = Player("playerOne", "O");
@@ -37,17 +37,20 @@ const Game = (() => {
                 case "playerOne": 
                     playerOne.addToken(position, playerOne.getName());
                     currentPlayer = "playerTwo";
+                    console.log()
+                    Game.checkWinner();
                     break;
                 case "playerTwo":
                     playerTwo.addToken(position, playerTwo.getName());
                     currentPlayer = "playerOne";
+                    Game.checkWinner();
                     break;
             }
-            console.log(currentPlayer);
+                        
         } else {
             Gameboard.disableTokens();      
         }
-        Game.checkWinner();
+        
         Game.checkTie();
         
     }
@@ -59,8 +62,9 @@ const Game = (() => {
                 tokenCount++;
             }
         }
-
-        if(tokenCount >= 9  ) {
+        console.log(tokenCount);
+        Game.checkWinner();
+        if(tokenCount >= 9) {
             playing = false; 
             Gameboard.disableTokens();
             winnerMessage.textContent = "It's a tie! 🤞";
@@ -79,6 +83,7 @@ const Game = (() => {
                 playerTwoTokens.push(tokens[i].dataset.token); 
             } 
         } 
+        console.log(playerOneTokens, playerTwoTokens);
 
         if (Game.checkTicTacToe(horizontalWins, playerOneTokens) || Game.checkTicTacToe(verticalWins, playerOneTokens) || Game.checkTicTacToe(diagonalWin, playerOneTokens)) {
             Gameboard.disableTokens();
@@ -95,13 +100,20 @@ const Game = (() => {
     }
 
     const checkTicTacToe = (arr, tokens) => {
+        let matches = 0;
+        // let numTokens = tokens.map(token => token.parseInt());
         for (let i = 0; i < arr.length; i++) {
-            let joinedArr = arr[i].sort().join("");
-            let joinedTokens = tokens.sort().join("");
-            if (joinedArr === joinedTokens) {
+            let currentBundle = arr[i];
+            for (let j = 0; j < tokens.length; j++) {
+                if (currentBundle.includes(parseInt(tokens[j]))) {
+                    matches++;
+                }
+            }
+            if (matches == 3) {
                 return true; 
             } 
-        }
+            matches = 0;
+        } 
         return false;
     }
 
