@@ -4,17 +4,19 @@
 
 button {
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.705);
-  color: white;
+  background-color: transparent;
+  border: 0.2em solid #33363C;
+  color: #33363C;
   font-weight: weight(bold);
-  font-size: 0-9em;
+  font-size: 0.9em;
   padding: 0.5em;
   width: 6em;
   height: 2.8em;
   z-index: 6;
 
   &:hover {
-    background-color: black;
+    background-color: #33363C;
+    color: #fff44f;
   }
 }
 
