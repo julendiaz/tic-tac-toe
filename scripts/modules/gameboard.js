@@ -3,7 +3,6 @@ import { Player } from "./player.js";
 import { Game } from "./game.js";
 
 const Gameboard = (() => { 
-    const gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8]; 
     const tokens = [...document.querySelectorAll(".token")]; 
     const players = [...document.querySelectorAll(".player")]; 
    

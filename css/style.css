@@ -28,7 +28,7 @@ html {
 
 body {
   color: #464647;
-  background-color: #fff44f;
+  background-color: #fdfcfa;
   min-width: 100%;
   min-height: 100vh;
   display: flex;
@@ -98,7 +98,7 @@ button {
 }
 button:hover {
   background-color: #33363C;
-  color: #fff44f;
+  color: #fdfcfa;
 }
 
 .player-container {

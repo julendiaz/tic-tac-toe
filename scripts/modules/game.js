@@ -19,13 +19,12 @@ const Game = (() => {
     const playerTwo = Player("playerTwo", "X"); 
 
     // Listen to the Gameboard
-    const listenGameboard = () => {
+    const startGame = () => {
         tokens.forEach((token) => {
             token.addEventListener("click", function () {
                 let currentPosition = token.dataset.token;
                 Game.playTurn(currentPosition);
                 Gameboard.switchPlayer();
-                // Remove hovers
                 Gameboard.removeHovers(token);
             })               
         })
@@ -37,7 +36,6 @@ const Game = (() => {
                 case "playerOne": 
                     playerOne.addToken(position, playerOne.getName());
                     currentPlayer = "playerTwo";
-                    console.log()
                     Game.checkWinner();
                     break;
                 case "playerTwo":
@@ -54,13 +52,13 @@ const Game = (() => {
     }
 
     const checkTie = () => {
-        // Check for the last tokens
+        // Make a count of the current tokens on the Gameboard
         for (let i = 0; i < tokens.length; i++) {
             if(tokens[i].classList.contains("token--playerOne") || tokens[i].classList.contains("token--playerTwo")) {
                 tokenCount++;
             }
         }
-
+        // Check for the Tie
         if(tokenCount >= 9) {
             playing = false; 
             Gameboard.disableTokens();
@@ -73,6 +71,7 @@ const Game = (() => {
     }
 
     const checkWinner = () => {
+        // Store the tokens from each player into an Array
         for(let i = 0; i < tokens.length; i++) {
             if(tokens[i].classList.contains("token--playerOne")) {
                 playerOneTokens.push(tokens[i].dataset.token); 
@@ -80,30 +79,28 @@ const Game = (() => {
                 playerTwoTokens.push(tokens[i].dataset.token); 
             } 
         } 
-        console.log(playerOneTokens, playerTwoTokens);
 
         if (Game.checkTicTacToe(horizontalWins, playerOneTokens) || Game.checkTicTacToe(verticalWins, playerOneTokens) || Game.checkTicTacToe(diagonalWin, playerOneTokens)) {
             Gameboard.disableTokens();
             winnerMessage.textContent = "Player 1 Wins! 🔥";
-            // return "playerOne wins";
         } else if (Game.checkTicTacToe(horizontalWins, playerTwoTokens) || Game.checkTicTacToe(verticalWins, playerTwoTokens) || Game.checkTicTacToe(diagonalWin, playerTwoTokens)) {
             Gameboard.disableTokens();
             winnerMessage.textContent = "Player 2 Wins! 🌊";
-            // return "playerTwo wins"
         } else {
             Game.checkTie();
         }
         
-
+        // Update the tokens from each player every round
         playerOneTokens = [];
         playerTwoTokens = [];
     }
 
     const checkTicTacToe = (arr, tokens) => {
         let matches = 0;
-        // let numTokens = tokens.map(token => token.parseInt());
+        // Itinerate through each of the possible winner hands
         for (let i = 0; i < arr.length; i++) {
             let currentBundle = arr[i];
+            // Check if the tokens are inside a winner combination
             for (let j = 0; j < tokens.length; j++) {
                 if (currentBundle.includes(parseInt(tokens[j]))) {
                     matches++;
@@ -117,7 +114,7 @@ const Game = (() => {
         return false;
     }
 
-    return { listenGameboard, playTurn, currentPlayer, checkTie, playing, checkWinner, checkTicTacToe, tokenCount, playerOneTokens, playerTwoTokens }
+    return { startGame, playTurn, currentPlayer, checkTie, playing, checkWinner, checkTicTacToe, tokenCount, playerOneTokens, playerTwoTokens }
 })();
 
 export { Game };
