@@ -6,4 +6,12 @@ header {
   @include flex(column, center, center);
   height: 10em;
   //   background-color: pink;
+  .main-title {
+    font-size: 3em;
+    font-weight: 200;
+    
+    span {
+      font-weight: 800;
+    }
+  }
 }

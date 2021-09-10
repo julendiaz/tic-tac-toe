@@ -1,0 +1,21 @@
+@use "../1_base/colors" as *;
+@use "../1_base/typography" as *;
+@use "../2_utils/functions" as *;
+
+.line {
+    width: 0.1em;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+}
+
+#vertical-one {
+    left: 30em;
+}
+
+#vertical-two {
+    right: 10em;
+    background-color: pink;
+}

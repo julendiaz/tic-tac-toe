@@ -3,8 +3,16 @@
 @use "../6_queries/queries" as *;
 @use "../1_base/colors" as *;
 
+.player-container {
+    @include flex(0, center, space-between);
+    // background-color: pink;
+    width: 13.5em;
+    margin: 0em auto 0em auto;
+}
+
 .player {
     font-weight: 300;
+    font-size: 1.3em;
 }
 .current-player {
     font-weight: 800;
