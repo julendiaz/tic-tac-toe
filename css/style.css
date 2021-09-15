@@ -186,7 +186,7 @@ button:hover {
   flex-direction: 0;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/cross.svg);
+  background-image: url(../assets/cross.svg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 83%;
@@ -208,7 +208,7 @@ button:hover {
   flex-direction: 0;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/hovercross.svg);
+  background-image: url(../assets/hovercross.svg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 83%;

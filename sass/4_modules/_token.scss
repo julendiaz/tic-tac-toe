@@ -20,7 +20,7 @@
 
     &--playerTwo {
         @include flex(0, center, center);
-        background-image: url(../../assets/cross.svg);
+        background-image: url(../assets/cross.svg);
         background-size: contain;
         background-repeat: no-repeat;
         width: 83%;
@@ -38,7 +38,7 @@
 
     &--hoverTwo {
         @include flex(0, center, center);
-        background-image: url(../../assets/hovercross.svg);
+        background-image: url(../assets/hovercross.svg);
         background-size: contain;
         background-repeat: no-repeat;
         width: 83%;
